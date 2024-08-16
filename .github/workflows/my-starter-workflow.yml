@@ -16,6 +16,8 @@ jobs:
           echo test, and deploy to your project.
           
 call-reusable-workflow:
+  needs: build
+  runs-on: ubuntu-latest
   strategy:
     matrix:
       nodeversion: [14, 16, 18, 20]
